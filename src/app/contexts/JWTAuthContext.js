@@ -1,7 +1,7 @@
-import React, { createContext, useEffect, useReducer } from 'react'
+import React, {createContext, useEffect, useReducer} from 'react'
 import jwtDecode from 'jwt-decode'
 import axios from 'axios.js'
-import { MatxLoading } from 'app/components'
+import {MatxLoading} from 'app/components'
 
 const initialState = {
     isAuthenticated: false,
@@ -32,7 +32,7 @@ const setSession = (accessToken) => {
 const reducer = (state, action) => {
     switch (action.type) {
         case 'INIT': {
-            const { isAuthenticated, user } = action.payload
+            const {isAuthenticated, user} = action.payload
 
             return {
                 ...state,
@@ -42,7 +42,7 @@ const reducer = (state, action) => {
             }
         }
         case 'LOGIN': {
-            const { user } = action.payload
+            const {user} = action.payload
 
             return {
                 ...state,
@@ -58,7 +58,7 @@ const reducer = (state, action) => {
             }
         }
         case 'REGISTER': {
-            const { user } = action.payload
+            const {user} = action.payload
 
             return {
                 ...state,
@@ -67,7 +67,7 @@ const reducer = (state, action) => {
             }
         }
         default: {
-            return { ...state }
+            return {...state}
         }
     }
 }
@@ -76,11 +76,12 @@ const AuthContext = createContext({
     ...initialState,
     method: 'JWT',
     login: () => Promise.resolve(),
-    logout: () => { },
+    logout: () => {
+    },
     register: () => Promise.resolve(),
 })
 
-export const AuthProvider = ({ children }) => {
+export const AuthProvider = ({children}) => {
     const [state, dispatch] = useReducer(reducer, initialState)
 
     const login = async (email, password) => {
@@ -88,7 +89,7 @@ export const AuthProvider = ({ children }) => {
             email,
             password,
         })
-        const { accessToken, user } = response.data
+        const {accessToken, user} = response.data
 
         setSession(accessToken)
 
@@ -107,7 +108,7 @@ export const AuthProvider = ({ children }) => {
             password,
         })
 
-        const { accessToken, user } = response.data
+        const {accessToken, user} = response.data
 
         setSession(accessToken)
 
@@ -121,18 +122,18 @@ export const AuthProvider = ({ children }) => {
 
     const logout = () => {
         setSession(null)
-        dispatch({ type: 'LOGOUT' })
+        dispatch({type: 'LOGOUT'})
     }
 
     useEffect(() => {
-        ; (async () => {
+        ;(async () => {
             try {
                 const accessToken = window.localStorage.getItem('accessToken')
 
                 if (accessToken && isValidToken(accessToken)) {
                     setSession(accessToken)
                     const response = await axios.get('/api/auth/profile')
-                    const { user } = response.data
+                    const {user} = response.data
 
                     dispatch({
                         type: 'INIT',
@@ -164,7 +165,7 @@ export const AuthProvider = ({ children }) => {
     }, [])
 
     if (!state.isInitialised) {
-        return <MatxLoading />
+        return <MatxLoading/>
     }
 
     return (

@@ -24,25 +24,25 @@ function PlacingSwitchLabel() {
             >
                 <FormControlLabel
                     value="top"
-                    control={<Switch color="primary" />}
+                    control={<Switch color="primary"/>}
                     label="Top"
                     labelPlacement="top"
                 />
                 <FormControlLabel
                     value="start"
-                    control={<Switch color="primary" />}
+                    control={<Switch color="primary"/>}
                     label="Start"
                     labelPlacement="start"
                 />
                 <FormControlLabel
                     value="bottom"
-                    control={<Switch color="primary" />}
+                    control={<Switch color="primary"/>}
                     label="Bottom"
                     labelPlacement="bottom"
                 />
                 <FormControlLabel
                     value="end"
-                    control={<Switch color="primary" />}
+                    control={<Switch color="primary"/>}
                     label="End"
                     labelPlacement="end"
                 />

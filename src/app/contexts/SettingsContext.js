@@ -1,15 +1,16 @@
-import React, { createContext, useState } from 'react'
+import React, {createContext, useState} from 'react'
 
-import { merge } from 'lodash'
+import {merge} from 'lodash'
 
-import { MatxLayoutSettings } from 'app/components/MatxLayout/settings'
+import {MatxLayoutSettings} from 'app/components/MatxLayout/settings'
 
 const SettingsContext = createContext({
     settings: MatxLayoutSettings,
-    updateSettings: () => {},
+    updateSettings: () => {
+    },
 })
 
-export const SettingsProvider = ({ settings, children }) => {
+export const SettingsProvider = ({settings, children}) => {
     const [currentSettings, setCurrentSettings] = useState(
         settings || MatxLayoutSettings
     )

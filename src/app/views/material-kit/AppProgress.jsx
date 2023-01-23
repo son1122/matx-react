@@ -1,9 +1,9 @@
 import React from 'react'
-import { Box, styled } from '@mui/system'
-import { Breadcrumb, SimpleCard } from 'app/components'
-import { LinearProgress, CircularProgress } from '@mui/material'
+import {Box, styled} from '@mui/system'
+import {Breadcrumb, SimpleCard} from 'app/components'
+import {LinearProgress, CircularProgress} from '@mui/material'
 
-const ProgressRoot = styled('div')(({ theme }) => ({
+const ProgressRoot = styled('div')(({theme}) => ({
     margin: '30px',
     [theme.breakpoints.down('sm')]: {
         margin: '16px',
@@ -44,16 +44,16 @@ const AppProgress = () => {
             <div className="breadcrumb">
                 <Breadcrumb
                     routeSegments={[
-                        { name: 'Material', path: '/material' },
-                        { name: 'Prgress' },
+                        {name: 'Material', path: '/material'},
+                        {name: 'Prgress'},
                     ]}
                 />
             </div>
             <SimpleCard title="Circuar Progress (Indeterminate)">
-                <CircularProgress className="progress" />
-                <CircularProgress className="progress" color="secondary" />
+                <CircularProgress className="progress"/>
+                <CircularProgress className="progress" color="secondary"/>
             </SimpleCard>
-            <Box py="12px" />
+            <Box py="12px"/>
             <SimpleCard title="Circuar Progress (static)">
                 <CircularProgress
                     value={25}
@@ -73,16 +73,16 @@ const AppProgress = () => {
                     color="secondary"
                 />
             </SimpleCard>
-            <Box py="12px" />
+            <Box py="12px"/>
             <SimpleCard title="Linear Progress (Indeterminate)">
-                <LinearProgress />
-                <br />
-                <LinearProgress color="secondary" />
+                <LinearProgress/>
+                <br/>
+                <LinearProgress color="secondary"/>
             </SimpleCard>
-            <Box py="12px" />
+            <Box py="12px"/>
             <SimpleCard title="Linear Progress (Determinate)">
-                <LinearProgress variant="determinate" value={completed} />
-                <br />
+                <LinearProgress variant="determinate" value={completed}/>
+                <br/>
                 <LinearProgress
                     color="secondary"
                     variant="determinate"

@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactEcharts from 'echarts-for-react'
-import { merge } from 'lodash'
+import {merge} from 'lodash'
 
 const defaultOption = {
     grid: {
@@ -96,10 +96,10 @@ const defaultOption = {
     ],
 }
 
-const ModifiedAreaChart = ({ height, option }) => {
+const ModifiedAreaChart = ({height, option}) => {
     return (
         <ReactEcharts
-            style={{ height: height }}
+            style={{height: height}}
             option={merge({}, defaultOption, option)}
         />
     )

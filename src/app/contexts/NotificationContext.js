@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useReducer } from 'react'
+import React, {createContext, useEffect, useReducer} from 'react'
 import axios from 'axios'
 
 const reducer = (state, action) => {
@@ -22,20 +22,24 @@ const reducer = (state, action) => {
             }
         }
         default: {
-            return { ...state }
+            return {...state}
         }
     }
 }
 
 const NotificationContext = createContext({
     notifications: [],
-    deleteNotification: () => {},
-    clearNotifications: () => {},
-    getNotifications: () => {},
-    createNotification: () => {},
+    deleteNotification: () => {
+    },
+    clearNotifications: () => {
+    },
+    getNotifications: () => {
+    },
+    createNotification: () => {
+    },
 })
 
-export const NotificationProvider = ({ settings, children }) => {
+export const NotificationProvider = ({settings, children}) => {
     const [state, dispatch] = useReducer(reducer, [])
 
     const deleteNotification = async (notificationID) => {

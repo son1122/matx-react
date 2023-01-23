@@ -311,7 +311,7 @@ Mock.onGet('/api/ecommerce/get-cart-list').reply((config) => {
 })
 
 Mock.onPost('/api/ecommerce/add-to-cart').reply((config) => {
-    let { uid, productId } = JSON.parse(config.data)
+    let {uid, productId} = JSON.parse(config.data)
 
     let cartList = EcommerceDB.cart.map((userCart) => {
         // if (userCart.uid === uid) {
@@ -348,7 +348,7 @@ Mock.onPost('/api/ecommerce/add-to-cart').reply((config) => {
 })
 
 Mock.onPost('/api/ecommerce/delete-from-cart').reply((config) => {
-    let { uid, productId } = JSON.parse(config.data)
+    let {uid, productId} = JSON.parse(config.data)
 
     let cartList = EcommerceDB.cart.map((userCart) => {
         // if (userCart.uid === uid) {
@@ -369,7 +369,7 @@ Mock.onPost('/api/ecommerce/delete-from-cart').reply((config) => {
 })
 
 Mock.onPost('/api/ecommerce/update-cart-amount').reply((config) => {
-    let { uid, productId, amount } = JSON.parse(config.data)
+    let {uid, productId, amount} = JSON.parse(config.data)
 
     let cartList = EcommerceDB.cart.map((userCart) => {
         // if (userCart.uid === uid) {

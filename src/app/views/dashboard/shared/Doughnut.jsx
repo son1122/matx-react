@@ -1,8 +1,8 @@
 import React from 'react'
-import { useTheme } from '@mui/system'
+import {useTheme} from '@mui/system'
 import ReactEcharts from 'echarts-for-react'
 
-const DoughnutChart = ({ height, color = [] }) => {
+const DoughnutChart = ({height, color = []}) => {
     const theme = useTheme()
 
     const option = {
@@ -87,7 +87,7 @@ const DoughnutChart = ({ height, color = [] }) => {
                         value: 20,
                         name: 'Facebook',
                     },
-                    { value: 15, name: 'Others' },
+                    {value: 15, name: 'Others'},
                 ],
                 itemStyle: {
                     emphasis: {
@@ -102,7 +102,7 @@ const DoughnutChart = ({ height, color = [] }) => {
 
     return (
         <ReactEcharts
-            style={{ height: height }}
+            style={{height: height}}
             option={{
                 ...option,
                 color: [...color],

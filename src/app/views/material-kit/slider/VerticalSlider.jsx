@@ -1,6 +1,6 @@
 import React from 'react'
-import { Box } from '@mui/system'
-import { Slider, Typography } from '@mui/material'
+import {Box} from '@mui/system'
+import {Slider, Typography} from '@mui/material'
 
 function valuetext(value) {
     return `${value}°C`
